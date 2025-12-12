@@ -1,52 +1,5 @@
 # Dictionary-Application
 Dictionary application that will allow the client to find the definition of a word in English. The application will load the list of words and their definitions from a text file; although the provided file is for English language, the application should work with dictionary in other languages.
-# Assignment #1: Dictionary
-
-In this assignment, you will create a dictionary application that will allow the client to find the definition(s) of a word in English. The application will load the list of words and their definitions from a text file; although the provided file is for English language (a version of [*The Gutenberg Webster's Unabridged Dictionary*](https://www.gutenberg.org/ebooks/673) in `csv` format), the application should work with dictionary in other languages.
-
-
-
-## Submission Policy
-
-The assignment should contain ***only work done by you this term*** or provided by your professor.  Work done in another term (by you or somebody else), or work done by somebody else and not **clearly identified/cited** is considered plagiarism, in violation of the Academic Integrity Policy.
-
-Every file that you submit must contain (as a comment) at the top **your name**, **your Seneca email**, **Seneca Student ID** and the **date** when you completed the work.
-
-- If the file contains only your work, or work provided to you by your professor, add the following message as a comment at the top of the file:
-
-    > I declare that this submission is the result of my own work and I only copied the code that my professor provided to complete my assignments. This submitted piece of work has not been shared with any other student or 3rd party content provider.
-
-- If the file contains work that is not yours (you found it online or somebody provided it to you), **write exactly which parts of the assignment are given to you as help, who gave it to you, or which source you received it from.**  By doing this you will only lose the mark for the parts you got help for, and the person helping you will be clear of any wrong doing.
-
-
-
-## Compiling and Testing Your Program
-
-All your code should be compiled using this command on `matrix`:
-
-```bash
-/usr/local/gcc/10.2.0/bin/g++ -Wall -std=c++17 -g -o asgn file1.cpp file2.cpp ...
-```
-
-- `-Wall`: compiler will report all warnings
-- `-std=c++17`: the code will be compiled using the C++17 standard
-- `-g`: the executable file will contain debugging symbols, allowing *valgrind* to create better reports
-- `-o asgn`: the compiled application will be named `asgn`
-
-After compiling and testing your code, run your program as following to check for possible memory leaks (assuming your executable name is `asgn`):
-
-```bash
-valgrind --show-error-list=yes --leak-check=full --show-leak-kinds=all --track-origins=yes asgn
-```
-
-- `--show-error-list=yes`: show the list of detected errors
-- `--leak-check=full`: check for all types of memory problems
-- `--show-leak-kinds=all`: show all types of memory leaks identified (enabled by the previous flag)
-- `--track-origins=yes`: tracks the origin of uninitialized values (`g++` must use `-g` flag for compilation, so the information displayed here is meaningful).
-
-To check the output, use a program that can compare text files.  Search online for such a program for your platform, or use `diff` available on `matrix`.
-
-
 
 
 ## Dictionary
@@ -66,13 +19,6 @@ Where:
 - `definition` is the definition of the word.
 
 Put all the global variables, global functions/operator overloads, and types inside the `seneca` namespace.
-
-
-
-### `tester_1` Module (supplied)
-
-
-**Do not modify this module!**  Study the code supplied and make sure you understand it.
 
 
 
@@ -236,44 +182,3 @@ Add any other public **special** members that your design requires (without chan
 
 
 
-### Sample Output
-
-The input files `english_large.csv` and `english_small.csv` are provided.
-
-When the program is started with the command:
-
-```bash
-asgn english_large.csv english_small.csv
-```
-
-the output should look like the one from the `sample_output.txt` file.
-
-> [!NOTE]
-> The execution times will be different every time you run the program! Everything else should match.
->
-> See that in the sample output the *move operations* are **many orders of magnitude** faster than the *copy operations*.  If your output does not have such a significant difference in times, keep working on your implementation (the actual numbers will be different every time you run the application).
-
-
-> [!CAUTION]
-> Please note that a matching output is not a guarantee that the program is bug-free; it only means that in the specific tests this tester performed, no bugs/issues were identified. It is possible to write a tester that looks at other aspects of your code that will reveal bugs.
-
-
-
-
-
-### Submission
-
-To test and demonstrate execution of your program use the same data as shown in the sample output.
-
-Upload the source code to your `matrix` account. Compile and run your code using the latest version of the `g++` compiler (available at `/usr/local/gcc/10.2.0/bin/g++`) and make sure that everything works properly.
-
-Then, run the following command from your account (replace `profname.proflastname` with your professor’s Seneca userid):
-
-  ```bash
-  ~profname.proflastname/submit 345/asgn1
-  ```
-
-and follow the instructions.
-
-> [!WARNING]
-> Please note that a successful submission does not guarantee full credit for this assignment. If the professor is not satisfied with your implementation, your professor may ask you to resubmit. Resubmissions will attract a penalty.
